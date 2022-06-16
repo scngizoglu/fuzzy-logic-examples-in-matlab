@@ -1,0 +1,69 @@
+[System]
+Name='Isitma'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=25
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='BagilNem'
+Range=[0 100]
+NumMFs=5
+MF1='CokDusuk':'trimf',[0 0 40]
+MF2='Dusuk':'trimf',[20 40 60]
+MF3='Orta':'trimf',[50 60 70]
+MF4='Yuksek':'trimf',[60 70 80]
+MF5='CokYuksek':'trimf',[80 100 100]
+
+[Input2]
+Name='sicaklik'
+Range=[-10 50]
+NumMFs=5
+MF1='CokDusuk':'trimf',[-10 -10 2]
+MF2='Dusuk':'trimf',[0 8 15]
+MF3='Orta':'trimf',[10 17 25]
+MF4='Yuksek':'trimf',[20 30 40]
+MF5='CokYuksek':'trimf',[30 50 50]
+
+[Output1]
+Name='isitma'
+Range=[0 10]
+NumMFs=5
+MF1='CokDusuk':'trimf',[0 0 2]
+MF2='Dusuk':'trimf',[2 3 4]
+MF3='Orta':'trimf',[3 4.5 6]
+MF4='Yuksek':'trimf',[5 6.5 8]
+MF5='CokYuksek':'trimf',[7 10 10]
+
+[Rules]
+1 1, 5 (1) : 1
+2 1, 5 (1) : 1
+3 1, 4 (1) : 1
+4 1, 4 (1) : 1
+5 1, 4 (1) : 1
+1 2, 4 (1) : 1
+2 2, 4 (1) : 1
+3 2, 4 (1) : 1
+5 2, 3 (1) : 1
+4 2, 3 (1) : 1
+1 3, 3 (1) : 1
+2 3, 3 (1) : 1
+3 3, 3 (1) : 1
+4 3, 3 (1) : 1
+5 3, 2 (1) : 1
+1 4, 2 (1) : 1
+2 4, 2 (1) : 1
+3 4, 2 (1) : 1
+4 4, 2 (1) : 1
+5 4, 2 (1) : 1
+5 5, 1 (1) : 1
+2 5, 1 (1) : 1
+3 5, 1 (1) : 1
+4 5, 1 (1) : 1
+5 5, 1 (1) : 1

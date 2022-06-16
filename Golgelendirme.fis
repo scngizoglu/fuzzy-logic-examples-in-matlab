@@ -1,0 +1,69 @@
+[System]
+Name='gölgelendirme'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=25
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='sicaklik'
+Range=[-10 50]
+NumMFs=5
+MF1='CokDusuk':'trimf',[-10 -10 3]
+MF2='Dusuk':'trimf',[0 7 15]
+MF3='CokYuksek':'trimf',[30 50 50]
+MF4='Orta':'trimf',[10 18 25]
+MF5='Yuksek':'trimf',[20 30 40]
+
+[Input2]
+Name='isiksiddeti'
+Range=[0 1.8]
+NumMFs=5
+MF1='CokDusuk':'trimf',[0 0 0.4]
+MF2='Dusuk':'trimf',[0.2 0.5 0.8]
+MF3='CokYuksek':'trimf',[1.6 1.8 1.8]
+MF4='Orta':'trimf',[0.6 1 1.2]
+MF5='Yuksek':'trimf',[0.9 1.3 1.6]
+
+[Output1]
+Name='golgelendirme'
+Range=[0 250]
+NumMFs=5
+MF1='CokDusuk':'trimf',[0 0 50]
+MF2='Orta':'trimf',[75 100 175]
+MF3='CokYuksek':'trimf',[200 250 250]
+MF4='Dusuk':'trimf',[0 45 75]
+MF5='Yuksek':'trimf',[140 170 210]
+
+[Rules]
+1 1, 1 (1) : 1
+1 2, 1 (1) : 1
+1 4, 4 (1) : 1
+1 5, 2 (1) : 1
+1 3, 2 (1) : 1
+2 1, 1 (1) : 1
+2 2, 1 (1) : 1
+2 4, 4 (1) : 1
+2 5, 2 (1) : 1
+2 3, 5 (1) : 1
+4 1, 1 (1) : 1
+4 2, 4 (1) : 1
+4 4, 2 (1) : 1
+4 5, 2 (1) : 1
+4 3, 5 (1) : 1
+5 1, 4 (1) : 1
+5 2, 4 (1) : 1
+5 4, 2 (1) : 1
+5 5, 5 (1) : 1
+5 3, 5 (1) : 1
+3 1, 4 (1) : 1
+3 2, 2 (1) : 1
+3 4, 2 (1) : 1
+3 5, 5 (1) : 1
+3 3, 3 (1) : 1
